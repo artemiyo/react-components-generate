@@ -1,0 +1,30 @@
+{
+  "name": "react-components-generate",
+  "version": "1.0.0",
+  "description": "CLI command that helps you to generate component file structure",
+  "author": "Artemiy Orlov",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": "https://github.com/artemiyo/react-components-generate",
+  "bin": {
+    "generate-component": "./lib/index.js"
+  },
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "fs-extra": "^10.1.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
