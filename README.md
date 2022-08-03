@@ -1,2 +1,2 @@
 # react-components-generate
-CLI command that helps you to generate component file structure 
+CLI command that helps to generate component file structure 
