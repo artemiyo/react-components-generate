@@ -1,4 +1,5 @@
 const path = require('path');
+const ShebangPlugin = require('webpack-shebang-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -16,6 +17,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js']
     },
+    plugins: [new ShebangPlugin()],
     output: {
         path: path.join(__dirname, 'lib'),
         publicPath: "/",
