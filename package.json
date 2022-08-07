@@ -1,6 +1,6 @@
 {
     "name": "react-components-generate",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "CLI command that helps you to generate component file structure",
     "author": "Artemiy Orlov",
     "license": "MIT",

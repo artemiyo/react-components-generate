@@ -1,5 +1,5 @@
 const path = require('path')
-const ShebangPlugin = require('webpack-shebang-plugin')
+const {BannerPlugin} = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -8,7 +8,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js'],
     },
-    plugins: [new ShebangPlugin()],
+    plugins: [new BannerPlugin({ banner: "#!/usr/bin/env node", raw: true })],
     output: {
         path: path.join(__dirname, 'lib'),
         publicPath: '/',
