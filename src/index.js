@@ -31,13 +31,35 @@ program
         ]
 
         fs.readdir(pathForStoreComponent, (err, files) => {
+            const { withTest } = program.opts()
             if (!files) {
                 fs.mkdir(pathForStoreComponent, { recursive: true }, () => {
                     componentFiles.forEach(({ path, template }) => {
                         fs.writeFile(path, template, (err) => {
-                            console.log(err);
-                        })
+                            const fileName = path.split('/').pop()
+                            console.log(
+                                chalk.green(
+                                    `File ${chalk.underline(
+                                        fileName
+                                    )} was successfully created!`
+                                )
+                            )
+                        });
                     })
+
+                    if(withTest) {
+                        fs.mkdir(`${pathForStoreComponent}/__tests__`, {recursive: true}, (err, path) => {
+                            fs.writeFile(`${path}/${componentName}.test.tsx`, '', () => {
+                                console.log(
+                                    chalk.green(
+                                        `File ${chalk.underline(
+                                            `${componentName}.test.tsx`
+                                        )} was successfully created!`
+                                    )
+                                )
+                            })
+                        })
+                    }
                 })
             } else {
                 console.log(
